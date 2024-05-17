@@ -12,7 +12,7 @@ import BodyTemp from '@/components/BodyTemp.vue';
 <template>
   <div class="flex">
     <Sidebar />
-    <main class="w-11/12 right-0 px-14">
+    <main class="w-11/12 right-0 px-14 pb-10">
       <Navbar />
       <div class="grid grid-cols-3 py-10 gap-10">
         <PatientList />
