@@ -4,6 +4,9 @@ import Navbar from '@/components/Navbar.vue';
 import PatientList from '@/components/PatientList.vue';
 import Consulted from '@/components/Consulted.vue';
 import Notes from '@/components/Notes.vue';
+import BloodCells from '@/components/BloodCells.vue';
+import BloodAnalysis from '@/components/BloodAnalysis.vue';
+import BodyTemp from '@/components/BodyTemp.vue';
 </script>
 
 <template>
@@ -15,6 +18,11 @@ import Notes from '@/components/Notes.vue';
         <PatientList />
         <Consulted />
         <Notes />
+      </div>
+      <div class="grid grid-cols-3 gap-10">
+        <BloodAnalysis />
+        <BloodCells />
+        <BodyTemp />
       </div>
     </main>
   </div>
