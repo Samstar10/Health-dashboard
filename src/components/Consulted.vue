@@ -9,7 +9,7 @@
 					<img src="../assets/images/smmuli.jpeg" alt="" class="rounded-full h-14">
 					<div>
 						<p class="font-semibold">Dizzel William</p>
-						<p class="text-sm text-gray-300">Male -28 Years 03 Months</p>
+						<p class="text-xs xl:text-sm text-gray-300">Male - 28 Years 03 Months</p>
 					</div>
 				</div>
 				<div class="flex justify-between mb-3">

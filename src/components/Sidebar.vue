@@ -1,12 +1,11 @@
 <script setup>
-
 </script>
 
 <template>
-	<aside class=" w-1/12 sticky top-0">
+	<aside class="w-full sticky top-0">
 		<div class="flex flex-col left-0 h-screen border-r-2 justify-between pb-5">
 			<div>
-				<div class="p-8">
+				<div class="p-1 md:p-4 lg:p-8 mb-10">
 					<img src="../assets/images/home icon.png" alt="">
 				</div>
 				<div class="flex flex-col gap-5 items-center">
