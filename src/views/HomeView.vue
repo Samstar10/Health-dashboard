@@ -1,11 +1,21 @@
 <script setup>
 import Sidebar from '@/components/Sidebar.vue';
 import Navbar from '@/components/Navbar.vue';
+import PatientList from '@/components/PatientList.vue';
+import Consulted from '@/components/Consulted.vue';
+import Notes from '@/components/Notes.vue';
 </script>
 
 <template>
-  <Sidebar />
-  <main class="w-11/12 right-0">
-    <Navbar />
-  </main>
+  <div class="flex">
+    <Sidebar />
+    <main class="w-11/12 right-0 px-14">
+      <Navbar />
+      <div class="grid grid-cols-3 py-10 gap-10">
+        <PatientList />
+        <Consulted />
+        <Notes />
+      </div>
+    </main>
+  </div>
 </template>

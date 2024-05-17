@@ -9,28 +9,28 @@
 				<img src="../assets/images/home icon.png" alt="">
 			</div>
 			<div class="flex flex-col gap-5 items-center">
-				<span class="material-symbols-outlined">
+				<span class="material-symbols-outlined text-gray-400">
 					pie_chart
 				</span>
-				<span class="material-symbols-outlined">
+				<span class="material-symbols-outlined text-gray-400">
 					trending_up
 				</span>
-				<span class="material-symbols-outlined">
+				<span class="material-symbols-outlined text-gray-400">
 					person
 				</span>
-				<span class="material-symbols-outlined">
+				<span class="material-symbols-outlined text-gray-400">
 					settings
 				</span>
-				<span class="material-symbols-outlined">
+				<span class="material-symbols-outlined text-gray-400">
 					mail
 				</span>
 			</div>
 		</div>
 		<div class="flex flex-col gap-5 items-center">
-			<span class="material-symbols-outlined">
+			<span class="material-symbols-outlined text-gray-400">
 				error
 			</span>
-			<span class="material-symbols-outlined">
+			<span class="material-symbols-outlined text-gray-400">
 				place_item
 			</span>
 		</div>
