@@ -40,7 +40,7 @@ const toggleDropdown = () => {
 					keyboard_arrow_down
 				</span>
 			</div>
-			<div v-if="showDropdown" class="absolute top-3/4 right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+			<div v-if="showDropdown" class="absolute top-3/4 right-0 mt-2 w-1/6 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
         		<RouterLink :to="{name: 'profile'}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">View Profile</RouterLink>
         		<RouterLink :to="{name: 'input'}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</RouterLink>
       		</div>
