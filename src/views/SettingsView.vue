@@ -38,16 +38,7 @@ onUnmounted(() => {
     </div>
     <main :class="['w-full lg:w-11/12 right-0 px-14 pb-10', isSidebarVisible ? 'w-11/12' : 'w-full']">
       <Navbar @toggle-sidebar="toggleSidebar" class="navbar-toggle" />
-      <div class="grid grid-cols-1 lg:grid-cols-3 py-10 gap-10">
-        <PatientList />
-        <Consulted />
-        <Notes />
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <BloodAnalysis />
-        <BloodCells />
-        <BodyTemp />
-      </div>
+			<h1>Settings</h1>
     </main>
   </div>
 </template>
