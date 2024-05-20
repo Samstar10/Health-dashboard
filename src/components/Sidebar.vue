@@ -1,11 +1,8 @@
 <script setup>
-import { inject } from 'vue';
-
-const isSidebarVisible = inject('isSidebarVisible')
 </script>
 
 <template>
-	<aside :class="['w-64 h-screen fixed top-0 bg-white shadow-md transform transition-transform duration-300 ease-in-out lg:translate-x-0', isSidebarVisible ? 'translate-x-0' : '-translate-x-full']">
+	<aside class="w-full sticky top-0">
 		<div class="flex flex-col left-0 h-screen border-r-2 justify-between pb-5">
 			<div>
 				<div class="p-1 md:p-4 lg:p-8 mb-10">
