@@ -1,13 +1,17 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, useAttrs } from 'vue';
 
 const emit = defineEmits(['toggle-sidebar'])
 
 const showDropdown = ref(false)
+const showSearchbar = ref(false)
 
 const toggleDropdown = () => {
 	showDropdown.value = !showDropdown.value
-	console.log(showDropdown.value)
+}
+
+const toggleSearchbar = () => {
+	showSearchbar.value = !showSearchbar.value
 }
 </script>
 
@@ -26,12 +30,14 @@ const toggleDropdown = () => {
 		</div>
 		<div class="flex w-1/2 lg:w-1/4 justify-end gap-2 lg:justify-between">
 			<div class="hidden md:flex gap-2 lg:gap-5 justify-center items-center">
-				<span class="material-symbols-outlined">
+				<span class="material-symbols-outlined cursor-pointer" @click="toggleSearchbar">
 					search
 				</span>
-				<span class="material-symbols-outlined">
-					notifications
-				</span>
+				<RouterLink :to="{name: 'messages'}">
+					<span class="material-symbols-outlined cursor-pointer">
+						notifications
+					</span>
+				</RouterLink>
 			</div>
 			<div class="flex justify-center items-center gap-2 border-2 border-gray-100 rounded-xl p-2 cursor-pointer" @click="toggleDropdown">
 				<img src="../assets/images/smmuli.jpeg" alt="Photo of Dr Everly" class="rounded-full h-8">
@@ -46,4 +52,8 @@ const toggleDropdown = () => {
       		</div>
 		</div>
    </div>
+   	<div v-if="showSearchbar" class="w-full py-2 flex gap-5 justify-center">
+		<input type="text" class="border rounded-lg px-4 py-2 w-1/2" placeholder="Search...">
+		<button class="bg-violet-600 rounded-xl p-2 text-white text-xs xl:text-sm">Search</button>
+	</div>
 </template>

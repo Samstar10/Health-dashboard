@@ -2,7 +2,7 @@
 </script>
 
 <template>
-	<aside class="w-3/12 lg:w-full top-0 absolute lg:sticky transform z-100 bg-white shadow-lg">
+	<aside class="w-3/12 lg:w-full top-0 absolute lg:sticky transform bg-white shadow-lg">
 		<div class="flex">
 			<div class="w-1/4 h-screen bg-violet-200 nav-side"></div>
 			<div class="flex flex-col left-0 h-screen border-r-2 justify-between pb-5">
