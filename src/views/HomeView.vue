@@ -11,10 +11,10 @@ import BodyTemp from '@/components/BodyTemp.vue';
 
 <template>
   <div class="flex">
-    <div class="w-1/12 sticky">
+    <div class="hidden lg:block lg:w-1/12 sticky">
       <Sidebar />
     </div>
-    <main class="w-11/12 right-0 px-14 pb-10">
+    <main class="w-full lg:w-11/12 right-0 px-14 pb-10">
       <Navbar />
       <div class="grid grid-cols-1 lg:grid-cols-3 py-10 gap-10">
         <PatientList />

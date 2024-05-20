@@ -13,8 +13,8 @@
 								<img src="../assets/images/smmuli.jpeg" alt="" class="rounded-full h-10">
 							</div>
 							<div>
-								<p class="font-semibold">Dizzel William</p>
-								<p class="text-sm text-gray-300">Report</p>
+								<p class="font-semibold text-sm lg:text-base">Dizzel William</p>
+								<p class="text-xs lg:text-sm text-gray-300">Report</p>
 							</div>
 						</div>
 						<div class="bg-purple-100 p-2 rounded-lg">
@@ -29,8 +29,8 @@
 								<img src="../assets/images/smmuli.jpeg" alt="" class="rounded-full h-10">
 							</div>
 							<div>
-								<p class="font-semibold">Ronda Rousy</p>
-								<p class="text-sm text-gray-300">Medical Checkup</p>
+								<p class="font-semibold text-sm lg:text-base">Ronda Rousy</p>
+								<p class="text-xs lg:text-sm text-gray-300">Medical Checkup</p>
 							</div>
 						</div>
 						<div class="bg-orange-100 p-2 rounded-lg">
@@ -45,8 +45,8 @@
 								<img src="../assets/images/smmuli.jpeg" alt="" class="rounded-full h-10">
 							</div>
 							<div>
-								<p class="font-semibold">Alex Adam</p>
-								<p class="text-sm text-gray-300">Weekly Visit</p>
+								<p class="font-semibold text-sm lg:text-base">Alex Adam</p>
+								<p class="text-xs lg:text-sm text-gray-300">Weekly Visit</p>
 							</div>
 						</div>
 						<div class="bg-pink-100 p-2 rounded-lg">
@@ -61,8 +61,8 @@
 								<img src="../assets/images/smmuli.jpeg" alt="" class="rounded-full h-10">
 							</div>
 							<div>
-								<p class="font-semibold">Dell Carnegi</p>
-								<p class="text-sm text-gray-300">Report</p>
+								<p class="font-semibold text-sm lg:text-base">Dell Carnegi</p>
+								<p class="text-xs lg:text-sm text-gray-300">Report</p>
 							</div>
 						</div>
 						<div class="bg-purple-100 p-2 rounded-lg">
