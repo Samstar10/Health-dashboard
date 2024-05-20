@@ -13,12 +13,13 @@ const isSidebarVisible = ref(true);
 
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value
+  console.log('Sidebar Visibility: ',isSidebarVisible.value)
 }
 </script>
 
 <template>
   <div class="flex"> 
-    <div class="hidden lg:block lg:w-1/12 sticky"  v-if="isSidebarVisible">
+    <div class="sticky"  v-if="isSidebarVisible">
       <Sidebar />
     </div>
     <main :class="['w-full lg:w-11/12 right-0 px-14 pb-10', isSidebarVisible ? 'w-11/12' : 'w-full']">

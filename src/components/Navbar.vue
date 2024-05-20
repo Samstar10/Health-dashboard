@@ -4,7 +4,7 @@ const emit = defineEmits(['toggle-sidebar'])
 
 <template>
   <div class="border-b-2 w-full py-6 lg:py-10 flex justify-between items-center">
-	    <div class="lg:hidden text-gray-400 mr-2" @click="emit('toggle-sidebar')">
+	    <div class="lg:hidden text-gray-400 mr-2 cursor-pointer" @click="emit('toggle-sidebar')">
 			<span class="material-symbols-outlined">
 				menu
 			</span>
