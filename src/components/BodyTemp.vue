@@ -1,5 +1,10 @@
 <script setup>
+import { onMounted } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
+import { useStore } from 'vuex';
+
+
+const store = useStore();
 
 const series = [36]; // Set the initial temperature value
 const chartOptions = {
@@ -59,6 +64,10 @@ const chartOptions = {
   },
   labels: ['Temperature'],
 };
+
+onMounted(() => {
+  store.dispatch('setAccessToken')
+})
 </script>
 
 <template>
