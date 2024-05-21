@@ -4,5 +4,8 @@ export default {
     },
     setTemperature(state, temperature) {
         state.temperature = temperature
+    },
+    setUser(state, user) {
+        state.user = user
     }
 }

@@ -70,7 +70,7 @@ onMounted(async() => {
   await store.dispatch('getTemperature')
   const temperature = store.getters.getTemperature
   if (temperature) {
-    series.value = [temperature[0].value.celsius]
+    series.value = [temperature[0].celsius.toFixed(2)];
   }
 })
 </script>
