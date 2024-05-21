@@ -1,12 +1,12 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
 import { useStore } from 'vuex';
 
 
 const store = useStore();
 
-const series = [36]; // Set the initial temperature value
+const series = ref([36]); // Set the initial temperature value
 const chartOptions = {
   chart: {
     type: 'radialBar',
@@ -65,8 +65,13 @@ const chartOptions = {
   labels: ['Temperature'],
 };
 
-onMounted(() => {
-  store.dispatch('setAccessToken')
+onMounted(async() => {
+  await store.dispatch('setAccessToken')
+  await store.dispatch('getTemperature')
+  const temperature = store.getters.getTemperature
+  if (temperature) {
+    series.value = [temperature[0].value.celsius]
+  }
 })
 </script>
 

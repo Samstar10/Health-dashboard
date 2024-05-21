@@ -4,7 +4,7 @@ import { useStore } from 'vuex'
 const store = useStore()
 
 const axiosClient = axios.create({
-    baseURL: process.env.APP_HOST
+    baseURL: import.meta.env.VITE_APP_HOST
 })
 
 axiosClient.interceptors.request.use((config) => {
