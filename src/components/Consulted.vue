@@ -1,4 +1,17 @@
 <script setup>
+import { onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+const user = ref({
+	name: '',
+	age: '',
+	gender: '',
+});
+
+onMounted(() => {
+	store.dispatch('getUser')
+})
 </script>
 
 <template>
