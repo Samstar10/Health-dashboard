@@ -101,10 +101,17 @@ onMounted(() => {
 			</div>
 
 			<DiaryModal :isVisible="isModalVisible" @close="closeModal">
-				<form>
-					<input type="text">
-					<textarea name="" id="" cols="30" rows="10"></textarea>
-					<input type="text">
+				<form class="flex flex-col">
+					<label for="" class="font-semibold text-sm text-gray-600 mb-2">Name:</label>
+					<input 
+						type="text"
+						class="border-2 border-gray-300 p-2 rounded-xl mb-2 focus:outline-none text-sm">
+					<label for="" class="font-semibold text-sm text-gray-600 mb-2">Description:</label>
+					<textarea name="" id="" class="border-2 border-gray-300 p-2 rounded-xl mb-2 focus:outline-none text-sm"></textarea>
+					<label for="" class="font-semibold text-sm text-gray-600 mb-2">Symptoms:</label>
+					<input 
+						type="text"
+						class="border-2 border-gray-300 p-2 rounded-xl mb-2 focus:outline-none text-sm">
 				</form>
 			</DiaryModal>
 		</div>
