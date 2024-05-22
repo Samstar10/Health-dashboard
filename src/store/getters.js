@@ -3,7 +3,12 @@ export default {
         return state.temperature
     },
     getAccessToken(state) {
-        return state.accessToken
+        return  {
+            headers: {
+                'Authorization': 'Bearer ' + state.accessToken,
+                'Content-Type': 'application/json'
+            }
+        }
     },
     getUser(state) {
         return state.user

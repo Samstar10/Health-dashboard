@@ -1,16 +1,14 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
 const store = useStore();
-const user = ref({
-	name: '',
-	age: '',
-	gender: '',
-});
+const user = computed(() => store.getters.getUser)
 
+// console.log(user.value.loggedInUser);
 onMounted(() => {
-	store.dispatch('getUser')
+	
+	store.dispatch('setUser')
 })
 </script>
 
@@ -21,7 +19,7 @@ onMounted(() => {
 				<div class="flex items-center gap-2 mb-5">
 					<img src="../assets/images/smmuli.jpeg" alt="" class="rounded-full h-14">
 					<div>
-						<p class="font-semibold">Dizzel William</p>
+						<p class="font-semibold">{{ user ? user.loggedInUser.firstName : '' }} {{ user ? user.loggedInUser.lastName : '' }}</p>
 						<p class="text-xs xl:text-sm text-gray-300">Male - 28 Years 03 Months</p>
 					</div>
 				</div>

@@ -8,6 +8,9 @@ import BloodCells from '@/components/BloodCells.vue';
 import BloodAnalysis from '@/components/BloodAnalysis.vue';
 import BodyTemp from '@/components/BodyTemp.vue';
 import { onMounted, onUnmounted, ref } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
 
 const isSidebarVisible = ref(false);
 
@@ -23,6 +26,7 @@ const handleClickOutside = (e) => {
 }
 
 onMounted(() => {
+
   document.addEventListener('click', handleClickOutside)
 })
 

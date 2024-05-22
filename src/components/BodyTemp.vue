@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
 import { useStore } from 'vuex';
 
@@ -65,13 +65,22 @@ const chartOptions = {
   labels: ['Temperature'],
 };
 
-onMounted(async() => {
-  await store.dispatch('setAccessToken')
-  await store.dispatch('getTemperature')
-  const temperature = store.getters.getTemperature
-  if (temperature) {
-    series.value = [temperature[0].celsius.toFixed(2)];
+const temperature = computed(() => store.getters["getTemperature"]);
+
+watch(temperature, (newValue, oldValue)=>{
+  console.log(newValue);
+  if(newValue.length > 0) {
+    series.value = [newValue[0].celsius.toFixed(2)];
   }
+})
+
+onMounted(async() => {
+
+  await store.dispatch('setTemperature')
+  // const temperature = store.getters.getTemperature
+  // if (temperature) {
+  //   series.value = [temperature[0].celsius.toFixed(2)];
+  // }
 })
 </script>
 
