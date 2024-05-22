@@ -36,5 +36,14 @@ export default {
         }).catch(error =>{
             console.log('User Profile Not fetched', error);
         })
+    },
+
+    async setDiaries(state){
+        await axios.get(baseURL+'/diary/',this.getters["getAccessToken"])
+        .then(response =>{
+            state.diaries = response.data
+        }).catch(error =>{
+            console.log(error);
+        })
     }
 }

@@ -5,6 +5,7 @@ import { useStore } from 'vuex';
 const store = useStore();
 const user = computed(() => store.getters.getUser)
 const userProfile = computed(() => store.getters.getUserProfile)
+const diaries = computed(() => store.getters.getDiaries)
 
 const calculateAge = (dob) => {
 	const today = new Date()
@@ -26,6 +27,7 @@ onMounted(() => {
 	
 	store.dispatch('setUser')
 	store.dispatch('setUserProfile')
+	store.dispatch('setDiaries')
 })
 </script>
 
@@ -40,14 +42,14 @@ onMounted(() => {
 						<p class="text-xs xl:text-sm text-gray-300">{{ userProfile ? userProfile.gender.value : '' }} - {{ userProfile ? `${age.years} Years` : '' }} {{ userProfile ? `${age.months} Months` : '' }}</p>
 					</div>
 				</div>
-				<div class="flex justify-between mb-3">
-					<div>
+				<div v-if="diaries.length > 0" class="flex justify-between mb-3">
+					<div v-for="diary in diaries">
 						<span class="material-symbols-outlined">
-							sick
+							{{ diary.symptoms }}
 						</span>
 						<p class="text-xs font-medium">Fever</p>
 					</div>
-					<div>
+					<!-- <div>
 						<span class="material-symbols-outlined">
 							sick
 						</span>
@@ -64,17 +66,24 @@ onMounted(() => {
 							sick
 						</span>
 						<p class="text-xs font-medium">Dry Eyes</p>
-					</div>
+					</div> -->
+				</div>
+				<div v-else>
+					<p class="text-gray-300 text-sm text-center">No records found</p>
 				</div>
 				<div class="border-b-2 border-gray-100 mb-8"></div>
-				<div class="flex justify-between w-full mb-5">
-					<p class="font-semibold text-xs">Last Checked</p>
-					<p class="font-normal text-xs text-gray-300 w-8/12"><span class="font-semibold text-black">Dr Kimberly</span> on Mount Hospital on 29 June 2021 <span class="text-violet-400 font-semibold">Prescription #2J983KTO</span></p>
+				<div class="flex justify-between w-full mb-5" v-for="diary in diaries" v-if="diaries.length > 0">
+					<p class="font-semibold text-xs">{{ diary.name }}</p>
+					<p class="font-normal text-xs text-gray-300 w-8/12">{{ diary.description }}</p>
 				</div>
-				<div class="flex justify-between w-full">
+				<div v-else class="flex justify-center items-center">
+					<button class="bg-violet-600 rounded-xl p-2 text-white text-xs xl:text-sm">Update Diary</button>
+				</div>
+				<!-- <div class="flex justify-between w-full">
+					<span class="font-semibold text-black">Dr Kimberly</span> on Mount Hospital on 29 June 2021 <span class="text-violet-400 font-semibold">Prescription #2J983KTO</span>
 					<p class="font-semibold text-xs">Observation</p>
 					<p class="font-normal text-xs text-gray-300 w-8/12">Three sickle cell patients were sustained at normal haemoglobin levels</p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 </template>

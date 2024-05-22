@@ -9,7 +9,8 @@ const store = createStore({
       accessToken: null,
 			temperature: null, 
 			user: null,
-      userProfile: null
+      userProfile: null,
+      diaries: []
     }
   },
   mutations: mutations,

@@ -16,5 +16,9 @@ export default {
 
     getUserProfile(state) {
         return state.userProfile
+    },
+
+    getDiaries(state) {
+        return state.diaries
     }
 }

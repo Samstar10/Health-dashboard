@@ -28,7 +28,6 @@ const datacollection = ref({
   ]
 })
 
-console.log(datacollection.value)
 // Define the chart options
 const chartOptions = ref({
   responsive: true,
@@ -68,5 +67,4 @@ const chartOptions = ref({
   }
 })
 
-console.log(chartOptions.value)
 </script>

@@ -68,7 +68,6 @@ const chartOptions = {
 const temperature = computed(() => store.getters["getTemperature"]);
 
 watch(temperature, (newValue, oldValue)=>{
-  console.log(newValue);
   if(newValue.length > 0) {
     series.value = [newValue[0].celsius.toFixed(2)];
   }

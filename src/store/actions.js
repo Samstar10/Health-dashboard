@@ -13,5 +13,9 @@ export default {
 
 	async setUserProfile(context) {
 		context.commit('setUserProfile')
+	},
+
+	async setDiaries(context) {
+		context.commit('setDiaries')
 	}
 }
