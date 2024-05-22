@@ -26,5 +26,15 @@ export default {
         }).catch(error =>{
             console.log(error);
         })
+    },
+
+    async setUserProfile(state){
+
+        await axios.get(baseURL+'/bio/get',this.getters["getAccessToken"])
+        .then(response =>{
+            state.userProfile = response.data
+        }).catch(error =>{
+            console.log('User Profile Not fetched', error);
+        })
     }
 }

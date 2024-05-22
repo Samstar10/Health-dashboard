@@ -4,11 +4,28 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 const user = computed(() => store.getters.getUser)
+const userProfile = computed(() => store.getters.getUserProfile)
+
+const calculateAge = (dob) => {
+	const today = new Date()
+	const years = today.getFullYear() - dob.getFullYear()
+	let months = today.getMonth() - dob.getMonth()
+
+	return {
+		years: years,
+		months: months
+	}
+}
+
+const dob = computed(() => new Date(userProfile.value.dateOfBirth.year, userProfile.value.dateOfBirth.month - 1, userProfile.value.dateOfBirth.day))
+const age = computed(() => calculateAge(dob.value))
+
 
 // console.log(user.value.loggedInUser);
 onMounted(() => {
 	
 	store.dispatch('setUser')
+	store.dispatch('setUserProfile')
 })
 </script>
 
@@ -20,7 +37,7 @@ onMounted(() => {
 					<img src="../assets/images/smmuli.jpeg" alt="" class="rounded-full h-14">
 					<div>
 						<p class="font-semibold">{{ user ? user.loggedInUser.firstName : '' }} {{ user ? user.loggedInUser.lastName : '' }}</p>
-						<p class="text-xs xl:text-sm text-gray-300">Male - 28 Years 03 Months</p>
+						<p class="text-xs xl:text-sm text-gray-300">{{ userProfile ? userProfile.gender.value : '' }} - {{ userProfile ? `${age.years} Years` : '' }} {{ userProfile ? `${age.months} Months` : '' }}</p>
 					</div>
 				</div>
 				<div class="flex justify-between mb-3">

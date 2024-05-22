@@ -9,5 +9,9 @@ export default {
 
 	async setUser(context) {
 		context.commit('setUser')
+	},
+
+	async setUserProfile(context) {
+		context.commit('setUserProfile')
 	}
 }

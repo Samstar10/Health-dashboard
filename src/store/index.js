@@ -8,7 +8,8 @@ const store = createStore({
     return {
       accessToken: null,
 			temperature: null, 
-			user: null   
+			user: null,
+      userProfile: null
     }
   },
   mutations: mutations,
